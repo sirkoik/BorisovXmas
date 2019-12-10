@@ -27,7 +27,7 @@ body {
     width: 100vw;
 }
 
-.container {
+.container {    
     display: flex;
     margin: 0;
     
@@ -45,4 +45,35 @@ body {
 
 a {
     color: #fff;
+}
+
+.scroll-button {
+    z-index: -2;
+    
+    text-align: center;
+    position: fixed;
+    bottom: 10vh;
+    left: 0; right: 0;
+}
+
+.scroll-button img {
+    animation: scrollButtonAnim 1s infinite alternate; 
+/*    animation: rotateScroll 1s forwards;*/
+    height: 5vh;
+}
+
+
+@keyframes scrollButtonAnim {
+    0% {margin-bottom: -1vh;}
+    100% {margin-bottom: 1vh;}
+}
+
+@keyframes rotateScroll {
+    0% {transform:rotate(0deg);}
+    100% {transform:rotate(180deg);}
+}
+
+@keyframes rotateScrollRev {
+    0% {transform:rotate(180deg);}
+    100% {transform:rotate(0deg);}
 }
