@@ -3,7 +3,8 @@ html {
     font-family: sans-serif;
     font-size: 3vh;
     
-    background: url('../images/STSCI-H-v1953a-f-1148x952.gif');
+/*    background: url('../images/STSCI-H-v1953a-f-1148x952.gif');*/
+    background: #000 url('../images/preload2.jpg');
     background-size: cover;
     background-position: center;
     
