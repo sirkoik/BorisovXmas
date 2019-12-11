@@ -1,8 +1,10 @@
 const BG = 'images/STSCI-H-v1953a-f-1148x952.gif';
 
 window.onload = function() {
-//    let i = new ImageHandler();
-//    i.load(BG);
+    let i = new ImageHandler();
+    i.load(BG).then(function() {
+        i.replaceImg(BG);
+    });
     
     let s = new Scroller();
 }
@@ -23,6 +25,12 @@ class ImageHandler {
             }
             img.src = url;
         })
+    }
+    
+    replaceImg(url) {
+        document.querySelector('body').style.backgroundImage = 'url("'+url+'")';
+        document.querySelector('body').style.backgroundSize = 'cover';
+        document.querySelector('body').style.backgroundPosition = 'center';
     }
 }
 
