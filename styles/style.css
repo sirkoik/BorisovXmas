@@ -42,9 +42,16 @@ body {
 
 .container > div {
 /*    display: none;*/
-    
     max-width: 80%;
 }
+
+/* iOS Safari fix */
+@media only screen and (max-width: 768px) {
+    .container > div {
+        padding-bottom: 20vh;
+    }
+}
+
 
 a {
     color: #fff;
