@@ -1,5 +1,29 @@
+const BG = 'images/STSCI-H-v1953a-f-1148x952.gif';
+
 window.onload = function() {
+//    let i = new ImageHandler();
+//    i.load(BG);
+    
     let s = new Scroller();
+}
+
+class ImageHandler {
+    constructor() {
+        
+    }
+    
+    load(url) {
+        return new Promise(function(resolve, reject) {
+            var img = new Image();
+            img.onload = function() {
+                resolve(url)
+            }
+            img.onerror = function() {
+                reject(url)
+            }
+            img.src = url;
+        })
+    }
 }
 
 class Scroller {
