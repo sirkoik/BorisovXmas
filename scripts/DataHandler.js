@@ -16,11 +16,8 @@ export const populateData = () => {
   const popFunc = dataArr => {
     const cont = document.getElementsByClassName('outer-container')[0];
 
-    console.log(dataArr);
     cont.innerHTML = dataArr.story
-      .map(item => {
-        return `<div class="container"><div>${item}</div></div>`;
-      })
+      .map(item => `<div class="container"><div>${item}</div></div>`)
       .join('');
   };
 
