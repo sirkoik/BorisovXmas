@@ -1,6 +1,8 @@
 # BorisovXmas
- A storyboard about comet 2I/Borisov.
+
+A storyboard about comet 2I/Borisov.
 
 # Note
-Smooth scrolling on this page does not use smooth-scroll.js
-BUGGED in IOS Safari - background does not load and smooth scrolling does not work!
+
+- Smooth scrolling on this page does not use smooth-scroll.js
+- Smooth scrolling is bugged in iOS Safari.
