@@ -28,7 +28,7 @@ export class ImageHandler {
       loadingBar.style.width = `${loadPercent}%`;
     }
 
-    loadingBar.style.animation = 'hidebar 2s forwards';
+    loadingBar.style.animation = 'hidebar 1s forwards';
     // added animationDelay of 2s (the same length as loading-bar's transition takes to complete).
     // https://stackoverflow.com/questions/33004919/chaining-multiple-css-animations#33006488
     loadingBar.style.animationDelay = '2s';
