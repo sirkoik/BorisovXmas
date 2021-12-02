@@ -35,22 +35,21 @@ body {
   display: flex;
   margin: 0;
 
+  /* 
+    -webkit-fill-available fills the height
+    to that of the available screen height.
+    It fixes centering issues on iOS devices.
+    https://css-tricks.com/the-trick-to-viewport-units-on-mobile/
+   */
   min-height: 100vh;
+  min-height: -webkit-fill-available;
 
   justify-content: center;
   align-items: center;
 }
 
 .container > div {
-  /*    display: none;*/
   max-width: 80%;
-}
-
-/* iOS Safari fix */
-@media only screen and (max-width: 768px) {
-  .container > div {
-    padding-bottom: 20vh;
-  }
 }
 
 a {
