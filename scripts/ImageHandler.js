@@ -7,6 +7,10 @@ export class ImageHandler {
     const response = await fetch(url);
     const reader = response.body.getReader();
 
+    if (!response.ok) {
+      throw new Error(`${response.status} ${response.statusText}`);
+    }
+
     const length = +response.headers.get('Content-Length');
     let loaded = 0;
 
