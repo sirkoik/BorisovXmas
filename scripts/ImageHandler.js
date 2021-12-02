@@ -22,21 +22,12 @@ export class ImageHandler {
       loaded += value.length;
       const loadPercent = (100 * loaded) / length;
       loadingBar.style.width = `${loadPercent}%`;
-
-      // console.log(
-      //   'Bytes:',
-      //   value.length,
-      //   loaded,
-      //   length,
-      //   (100 * loaded) / length
-      // );
     }
 
     loadingBar.style.animation = 'hidebar 2s forwards';
-
-    // setTimeout(() => {
-    //   loadingBar.style.animation = 'hidebar 2s forwards';
-    // }, 2000);
+    // added animationDelay of 2s (the same length as loading-bar's transition takes to complete).
+    // https://stackoverflow.com/questions/33004919/chaining-multiple-css-animations#33006488
+    loadingBar.style.animationDelay = '2s';
   }
 
   replaceImg(url) {
