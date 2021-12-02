@@ -1,8 +1,8 @@
 import { ImageHandler } from './ImageHandler.js';
 import { Scroller } from './Scroller.js';
 
-const BG_CORRECT = 'images/STSCI-H-v1953a-f-1148x952.gif';
-const BG = 'images/STSCI-H-v1953a-f-1148x952.gif1';
+// const BG_CORRECT = 'images/STSCI-H-v1953a-f-1148x952.gif';
+const BG = 'images/STSCI-H-v1953a-f-1148x952.gif';
 
 window.onload = () => {
   const i = new ImageHandler();
