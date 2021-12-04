@@ -3,15 +3,12 @@ html {
   font-family: sans-serif;
   font-size: 3vh;
 
-  background: #000 url('../images/preload2.jpg');
-  background-size: cover;
-  background-position: center;
-
   padding: 0;
   margin: 0;
 }
 
 body {
+  background: #000;
   padding: 0;
   margin: 0;
 }
@@ -99,19 +96,30 @@ a {
   }
 }
 
-#loading-bar {
-  height: 0.5em;
-  background: #fff;
+/*
+  Video background-size: cover equivalent courtesy misterManSam
+  https://stackoverflow.com/a/30362474/5511776
+*/
+
+.video-container {
   position: fixed;
   top: 0;
-  transition: width 2s;
+  left: 0;
+  right: 0;
+  bottom: 0;
+
+  width: 100%;
 }
 
-@keyframes hidebar {
-  from {
-    height: 0.5em;
-  }
-  to {
-    height: 0em;
-  }
+video.bg-video {
+  position: fixed;
+  min-width: 100%;
+  min-height: 100%;
+  top: 50%;
+  left: 50%;
+  transform: translateX(-50%) translateY(-50%);
+
+  background: #000 url('../images/preload2.jpg') no-repeat;
+  background-size: cover;
+  background-position: center;
 }
