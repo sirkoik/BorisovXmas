@@ -4,5 +4,8 @@
   },
   "scripts": {
     "dev": "lite-server"
+  },
+  "devDependencies": {
+    "webpack": "^5.68.0"
   }
 }
