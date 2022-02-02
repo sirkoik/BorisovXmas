@@ -1,11 +1,19 @@
 {
+  "name": "borisov-xmas",
+  "version": "0.2",
+  "description": "Borisov Xmas",
+  "private": true,
   "dependencies": {
+    "html-webpack-plugin": "^5.5.0",
     "lite-server": "^2.6.1"
   },
   "scripts": {
     "dev": "lite-server"
   },
   "devDependencies": {
-    "webpack": "^5.68.0"
+    "css-loader": "^6.6.0",
+    "style-loader": "^3.3.1",
+    "webpack": "^5.68.0",
+    "webpack-cli": "^4.9.2"
   }
 }
