@@ -1,8 +1,9 @@
 const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
+const MiniCssExtractPlugin = require('mini-css-extract-plugin');
+const CssMinimizerPlugin = require('css-minimizer-webpack-plugin');
 
 module.exports = {
-  mode: 'development',
   entry: './src/scripts/app.js',
   output: {
     path: path.resolve(__dirname, 'dist'),
@@ -12,32 +13,26 @@ module.exports = {
     rules: [
       {
         test: /\.css$/i,
-        use: ['style-loader', 'css-loader'],
+        use: [MiniCssExtractPlugin.loader, 'css-loader'],
       },
       {
         test: /\.(png|svg|jpg|jpeg|gif)$/i,
-        use: [
-          {
-            loader: 'url-loader',
-            options: {
-              limit: 8000,
-              name: 'images/[hash]-[name].[ext]',
-            },
-          },
-        ],
+        type: 'asset',
+        generator: {
+          filename: 'images/[name][ext][query]',
+        },
       },
       {
         test: /\.mp4$/i,
-        use: [
-          {
-            loader: 'file-loader',
-            options: {
-              name: 'videos/[hash]-[name].[ext]',
-            },
-          },
-        ],
+        type: 'asset',
+        generator: {
+          filename: 'videos/[name][ext][query]',
+        },
       },
     ],
+  },
+  optimization: {
+    minimizer: [`...`, new CssMinimizerPlugin()],
   },
   devServer: {
     static: {
@@ -48,6 +43,7 @@ module.exports = {
     port: 9000,
   },
   plugins: [
+    new MiniCssExtractPlugin(),
     new HtmlWebpackPlugin({
       hash: true,
       template: './src/index.html',
