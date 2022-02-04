@@ -9,6 +9,5 @@ A storyboard about comet 2I/Borisov.
 
 # Todos
 
-- dev/prod
 - get paths for files in html, not app.js imports
 - github pages integration

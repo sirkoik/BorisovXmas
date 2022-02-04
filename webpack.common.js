@@ -8,6 +8,7 @@ module.exports = {
   output: {
     path: path.resolve(__dirname, 'dist'),
     filename: 'bundle.js',
+    clean: true,
   },
   module: {
     rules: [
@@ -34,16 +35,18 @@ module.exports = {
   optimization: {
     minimizer: [`...`, new CssMinimizerPlugin()],
   },
-  devServer: {
-    static: {
-      directory: path.join(__dirname, 'assets'),
-      publicPath: '/assets',
-    },
-    compress: true,
-    port: 9000,
-  },
+  // devServer: {
+  //   static: {
+  //     directory: path.join(__dirname, 'assets'),
+  //     publicPath: '/assets',
+  //   },
+  //   compress: true,
+  //   port: 9000,
+  // },
   plugins: [
-    new MiniCssExtractPlugin(),
+    new MiniCssExtractPlugin({
+      filename: '[name].[contenthash].css',
+    }),
     new HtmlWebpackPlugin({
       hash: true,
       template: './src/index.html',
