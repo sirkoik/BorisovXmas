@@ -9,7 +9,7 @@ export class Scroller {
         let nextTop = 0;
 
         try {
-          nextTop = this.nextSibling.nextSibling.getBoundingClientRect().top;
+          nextTop = this.nextSibling.getBoundingClientRect().top;
         } catch (e) {
           nextTop =
             this.scrollTop + this.clientHeight >= this.scrollHeight
